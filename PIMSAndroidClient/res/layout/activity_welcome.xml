@@ -13,5 +13,16 @@
         android:layout_centerInParent="true"
         android:adjustViewBounds="true"
         android:src="@drawable/app_icon" />
+    
+    <TextView
+		android:id="@+id/tv_version"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/logo"
+		android:layout_centerInParent="true"
+		android:layout_marginTop="15sp"
+		android:adjustViewBounds="true"
+		android:textColor="@android:color/holo_blue_dark"
+		android:textSize="14sp"/>
 
 </RelativeLayout>

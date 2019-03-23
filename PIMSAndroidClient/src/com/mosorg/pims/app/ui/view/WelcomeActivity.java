@@ -6,23 +6,38 @@ import com.mosorg.pims.app.common.vo.User;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WelcomeActivity extends Activity implements HttpResponeCallBack {
 	
 	private ImageView iv;
+	private TextView tv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
 		
+		//用于显示logo
 		iv = (ImageView) this.findViewById(R.id.logo);
+		
+		//用于显示版本号
+		tv = (TextView) this.findViewById(R.id.tv_version);
+		
+		//获取版本号
+		try{
+			   PackageInfo info = getPackageManager().getPackageInfo(getPackageName(),0);
+			   tv.setText("Current version： v "+info.versionName);
+			 }catch(Exception e){
+			   e.printStackTrace();
+			 }
 
         //实现动画
 		AlphaAnimation alphaAnimation = new AlphaAnimation(0.2f, 1.0f);

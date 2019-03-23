@@ -2,6 +2,7 @@ package com.mosorg.pims.app.ui.view;
 
 import com.mosorg.pims.androidclient.R;
 import com.mosorg.pims.app.common.http.reponse.HttpResponeCallBack;
+import com.mosorg.pims.app.common.utils.CircleImageView;
 import com.mosorg.pims.app.common.vo.User;
 import com.mosorg.pims.common.utils.Utils;
 
@@ -12,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity implements HttpResponeCallBack {
@@ -20,6 +22,7 @@ public class LoginActivity extends Activity implements HttpResponeCallBack {
     private EditText loginPassword;//密码
     private Button loginBtn;
     private Button registerBtn;
+    private ImageView iv_head;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -8,6 +8,8 @@
 4、实现登录背景图片
 5、实现登录圆形头像和输入框、登录按钮圆角
 6、实现欢迎页面显示版本号
+7、实现自定义圆形头像类：CircleImageView.java
+8、实现自定义按钮圆角Drawable：bt_shape.xml
 
 
 ===Android版本：

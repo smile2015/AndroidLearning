@@ -1,91 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_12"
+    tools:context=".RegisterActivity">
+    
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical" >
+    
+	    <include
+	        android:id="@+id/main_title"
+	        layout="@layout/title_bar_layout" />
+	    
+	    <include
+	        layout="@layout/head_logo_layout" />
+	    
+	   </LinearLayout>
+    
+    <RelativeLayout
+        android:id="@+id/middle_reg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_layout"
+        android:layout_centerInParent="true" >
 
-        <TextView
-            android:id="@+id/account_nickname"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center_vertical"
-            android:text="昵称:"
-            android:textSize="16sp" />
+        <LinearLayout
+            android:id="@+id/input_reg_layout"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:layout_marginLeft="50dip"
+	        android:layout_marginRight="50dip"
+	        android:background="@drawable/radius_drawable_bg"
+	        android:orientation="vertical"
+	        android:padding="10dip" >
+	
+	        
+	        
+	        <LinearLayout
+	            android:id="@+id/layout_reg_account"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_vertical"
+	            android:orientation="horizontal" >
+	            
+	            <ImageView
+	                android:id="@+id/img_account"
+	                android:layout_width="20sp"
+	                android:layout_height="20sp"
+	                android:layout_marginBottom="0dp"
+	                android:layout_marginRight="5dp"
+	                android:src="@drawable/paw_code" />
+	            
+	            <TextView
+		            android:id="@+id/text_account"
+		            android:layout_width="wrap_content"
+		            android:layout_height="80dp"
+		            android:layout_marginTop="10dp"
+		            android:gravity="center_vertical"
+		            android:text="@string/text_account"
+		            android:textSize="16sp" 
+		            android:textStyle="bold"/>
+		
+		        <EditText
+		            android:id="@+id/input_reg_account"
+		            android:layout_width="180dp"
+		            android:layout_height="80dp"
+		            android:layout_marginLeft="10dp"
+		            android:layout_marginTop="10dp"
+		            android:gravity="center_vertical"
+		            android:hint="@string/tips_input_account"
+		            android:paddingLeft="5dp"
+		            android:background="@drawable/bt_shape"/>
+		        
+		        </LinearLayout>
+			
+		        <View
+		            android:layout_width="match_parent"
+		            android:layout_height="1px"
+		            android:layout_marginBottom="5dip"
+		            android:layout_marginTop="5dip"
+		            android:background="#eeeeee" />
+		        
+		        <LinearLayout
+		            android:id="@+id/layout_reg_password"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_vertical"
+		            android:orientation="horizontal" >
+		            
+		            <ImageView
+		                android:id="@+id/img_password"
+		                android:layout_width="20sp"
+		                android:layout_height="20sp"
+		                android:layout_marginBottom="0dp"
+		                android:layout_marginRight="5dp"
+		                android:src="@drawable/paw_left" />
+		            
+		            <TextView
+			            android:id="@+id/text_password"
+			            android:layout_width="wrap_content"
+			            android:layout_height="80dp"
+			            android:layout_marginTop="10dp"
+			            android:gravity="center_vertical"
+			            android:text="@string/text_password"
+			            android:textSize="16sp" 
+			            android:textStyle="bold"/>	
+			
+			        <EditText
+			            android:id="@+id/input_reg_password"
+			            android:layout_width="180dp"
+			            android:layout_height="80dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginTop="10dp"
+			            android:gravity="center_vertical"
+			            android:hint="@string/tips_input_password"
+			            android:inputType="textPassword"
+			            android:paddingLeft="5dp"
+			            android:singleLine="true"	
+			            android:background="@drawable/bt_shape"/>
+			        
+			        </LinearLayout>
+			        
+		       	<View
+		            android:layout_width="match_parent"
+		            android:layout_height="1px"
+		            android:layout_marginBottom="5dip"
+		            android:layout_marginTop="5dip"
+		            android:background="#eeeeee" />
+			        
+		        <LinearLayout
+		            android:id="@+id/layout_reg_email"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_vertical"
+		            android:orientation="horizontal" >
+		            
+		            <ImageView
+		                android:id="@+id/img_email"
+		                android:layout_width="20sp"
+		                android:layout_height="20sp"
+		                android:layout_marginBottom="0dp"
+		                android:layout_marginRight="5dp"
+		                android:src="@drawable/paw_code" />
+		            
+		            <TextView
+			            android:id="@+id/text_email"
+			            android:layout_width="wrap_content"
+			            android:layout_height="80dp"
+			            android:gravity="center_vertical"
+			            android:text="@string/text_email"
+			            android:textSize="16sp" 
+			            android:textStyle="bold"/>
+			
+			        <EditText
+			            android:id="@+id/input_reg_email"
+			            android:layout_width="180dp"
+			            android:layout_height="80dp"
+			            android:layout_marginLeft="10dp"
+			            android:gravity="center_vertical"
+			            android:hint="@string/tips_input_email"
+			            android:paddingLeft="5dp"
+			            android:singleLine="true" 
+			            android:background="@drawable/bt_shape"/>
+		        </LinearLayout>
+		
+	        
+			
+		</LinearLayout>
+		
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/input_reg_layout"
+	        android:layout_margin="20dip"
+	        android:orientation="vertical"
+	        android:gravity="center"
+	        android:padding="10dip" >
 
-        <EditText
-            android:id="@+id/regist_nick"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/account_nickname"
-            android:gravity="center_vertical"
-            android:hint="请输入用户名"
-            android:paddingLeft="5dp"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/account_name"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_below="@+id/account_nickname"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:text="账号:"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/regist_account"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/regist_nick"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/account_name"
-            android:gravity="center_vertical"
-            android:hint="请输入正确的邮箱"
-            android:paddingLeft="5dp"
-            android:singleLine="true" />
-
-        <TextView
-            android:id="@+id/account_password_name"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_below="@+id/account_name"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:text="密码:"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/regist_password"
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/regist_account"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/account_password_name"
-            android:gravity="center_vertical"
-            android:hint="请输入密码"
-            android:inputType="textPassword"
-            android:paddingLeft="5dp"
-            android:singleLine="true" />
-
-        <Button
-            android:id="@+id/regist_btn"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/account_password_name"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="注册"
-            android:textSize="16sp" />
+        
+	        <Button
+	            android:id="@+id/btn_submit"
+	            android:layout_width="300dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="15dip"
+	            android:background="@drawable/button_style"
+	            android:gravity="center"
+	            android:paddingBottom="2dip"
+	            android:paddingLeft="15dip"
+	            android:paddingRight="15dip"
+	            android:paddingTop="2dip"
+	            android:layout_weight="3"
+	            android:textColor="@color/white"
+	            android:textSize="20sp" />
+        
+        </LinearLayout>
+        
     </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/middle_reg_layout"
+        android:layout_marginBottom="0dip"
+        >
+        
+        <include
+	        layout="@layout/bottom_menu_layout" />
+        
+       </RelativeLayout>
+    
 
 </RelativeLayout>

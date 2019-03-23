@@ -10,6 +10,7 @@
 6、实现欢迎页面显示版本号
 7、实现自定义圆形头像类：CircleImageView.java
 8、实现自定义按钮圆角Drawable：bt_shape.xml
+9、实现顶部和底部菜单布局
 
 
 ===Android版本：

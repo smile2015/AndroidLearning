@@ -2,7 +2,6 @@ package com.mosorg.pims.app.ui.view;
 
 import com.mosorg.pims.androidclient.R;
 import com.mosorg.pims.app.common.http.reponse.HttpResponeCallBack;
-import com.mosorg.pims.app.common.utils.CircleImageView;
 import com.mosorg.pims.app.common.vo.User;
 import com.mosorg.pims.common.utils.Utils;
 
@@ -13,16 +12,16 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity implements HttpResponeCallBack {
 	
 	private EditText loginAccount;//账号
     private EditText loginPassword;//密码
-    private Button loginBtn;
-    private Button registerBtn;
-    private ImageView iv_head;
+    private Button btn_submit;
+    private TextView title_bar_layout_btn;
+    private TextView activity_title_info;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +36,17 @@ public class LoginActivity extends Activity implements HttpResponeCallBack {
      */
     private void init() {
     	//根据ID获取按钮控件对象
-        loginAccount = (EditText) findViewById(R.id.login_account);
-        loginPassword = (EditText) findViewById(R.id.login_password);
-        loginBtn = (Button) findViewById(R.id.login_btn);
-        registerBtn = (Button) findViewById(R.id.register_btn);
+        loginAccount = (EditText) findViewById(R.id.input_login_account);
+        loginPassword = (EditText) findViewById(R.id.input_login_password);
+        btn_submit = (Button) findViewById(R.id.btn_submit);
+        btn_submit.setText(R.string.btn_login);
+        title_bar_layout_btn = (TextView) findViewById(R.id.title_bar_layout_btn);
+        title_bar_layout_btn.setText(R.string.btn_reg);
+        activity_title_info = (TextView) findViewById(R.id.activity_title_info);
+        activity_title_info.setText(R.string.title_activity_login);
         
         //点击登录按钮
-        loginBtn.setOnClickListener(new Button.OnClickListener() {
+        btn_submit.setOnClickListener(new Button.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -101,7 +104,7 @@ public class LoginActivity extends Activity implements HttpResponeCallBack {
             }
         });
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        title_bar_layout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <corners android:radius="50dip"/>
+    
+    <size
+        android:width="80dp"
+        android:height="80dp" />
+
+    <stroke
+        android:width="5px"
+        android:color="#ffffff" />
+    <!-- 填充颜色
+    <solid android:color="#7adfb8" />-->
+    
+    <!-- 调整angle实现水平渐变，垂直渐变或者对角渐变 -->
+    <gradient
+        android:angle="90"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:centerColor="#8000ff00"
+        android:endColor="#1000ff00"
+        android:startColor="#ff00ff00"
+        android:type="linear" />
+
+</shape>
